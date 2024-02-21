@@ -18,12 +18,12 @@ namespace POSales
         DBConnect dbcon = new DBConnect();
         SqlDataReader dr;
         public string solduser;
-
-        public DailySale()
+        MainForm main;
+        public DailySale(MainForm mn)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
-            //main = mn;
+            main = mn;
             LoadCashier();
         }
 
@@ -108,12 +108,28 @@ namespace POSales
                 cancelOrder.txtQty.Text = dgvSold.Rows[e.RowIndex].Cells[6].Value.ToString();
                 cancelOrder.txtDisc.Text = dgvSold.Rows[e.RowIndex].Cells[7].Value.ToString();
                 cancelOrder.txtTotal.Text = dgvSold.Rows[e.RowIndex].Cells[8].Value.ToString();
-                //if (lblTitle.Visible == false)
-                //    cancel.txtCancelBy.Text = main.lblUsername.Text;
-                //else
-                cancelOrder.txtCancelBy.Text = solduser;
+                if (lblTitle.Visible == false)
+                    cancelOrder.txtCancelBy.Text = main.lblUsername.Text;
+                else
+                    cancelOrder.txtCancelBy.Text = solduser;
                 cancelOrder.ShowDialog();
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            POSReport report = new POSReport();
+            string param = "Date From: " + dtFrom.Value.ToShortDateString() + " To: " + dtTo.Value.ToShortDateString();
+
+            if (cboCashier.Text == "All Cashier")
+            {
+                report.LoadDailyReport("select c.id, c.trasnno, c.pcode, p.pdesc, c.price, c.qty, c.disc as discount, c.total from tbCart as c inner join tbProduct as p on c.pcode = p.pcode where status like 'Sold' and sdate between '" + dtFrom.Value + "' and '" + dtTo.Value + "'", param, cboCashier.Text);
+            }
+            else
+            {
+                report.LoadDailyReport("select c.id, c.trasnno, c.pcode, p.pdesc, c.price, c.qty, c.disc as discount, c.total from tbCart as c inner join tbProduct as p on c.pcode = p.pcode where status like 'Sold' and sdate between '" + dtFrom.Value + "' and '" + dtTo.Value + "' and cashir like '" + cboCashier.Text + "'", param, cboCashier.Text);
+            }
+            report.ShowDialog();
         }
     }
 }

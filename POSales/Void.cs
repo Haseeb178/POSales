@@ -79,7 +79,7 @@ namespace POSales
             try
             {
                 cn.Open();
-                cm = new SqlCommand("insert into tbCancel (trasnno, pcode, price, qty, total, sdate, voidby, cancelledby, reason, action) values (@transno, @pcode, @price, @qty, @total, @sdate, @voidby, @cancelledby, @reason, @action)", cn);
+                cm = new SqlCommand("insert into tbCancel (trasnno, pcode, price, qty, total, sdate, voidby, cancelledby, reason, action) values (@trasnno, @pcode, @price, @qty, @total, @sdate, @voidby, @cancelledby, @reason, @action)", cn);
                 cm.Parameters.AddWithValue("@trasnno", cancelOrder.txtTransno.Text);
                 cm.Parameters.AddWithValue("@pcode", cancelOrder.txtPcode.Text);
                 cm.Parameters.AddWithValue("@price", double.Parse(cancelOrder.txtPrice.Text));
