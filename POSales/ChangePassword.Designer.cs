@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePassword));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picClose = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -38,11 +39,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtComPass = new System.Windows.Forms.TextBox();
             this.txtNewPass = new System.Windows.Forms.TextBox();
-            this.picClose = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,6 +55,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(402, 50);
             this.panel1.TabIndex = 17;
+            // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Location = new System.Drawing.Point(372, 0);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(30, 35);
+            this.picClose.TabIndex = 9;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
             // 
             // label1
             // 
@@ -145,17 +156,6 @@
             this.txtNewPass.Size = new System.Drawing.Size(274, 27);
             this.txtNewPass.TabIndex = 23;
             // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(372, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(30, 35);
-            this.picClose.TabIndex = 9;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -182,14 +182,16 @@
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePassword_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

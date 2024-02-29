@@ -50,9 +50,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(152, 51);
             this.Controls.Add(this.txtQty);
+            this.KeyPreview = true;
             this.Name = "Qty";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Qty";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Qty_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

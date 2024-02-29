@@ -42,8 +42,8 @@
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -77,7 +77,7 @@
             this.dgvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSupplier.EnableHeadersVisualStyles = false;
             this.dgvSupplier.Location = new System.Drawing.Point(0, 0);
-            this.dgvSupplier.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvSupplier.Margin = new System.Windows.Forms.Padding(5);
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.RowHeadersVisible = false;
             this.dgvSupplier.Size = new System.Drawing.Size(959, 468);
@@ -163,10 +163,23 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 468);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(959, 91);
             this.panel1.TabIndex = 6;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.Location = new System.Drawing.Point(886, 28);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(59, 49);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label1
             // 
@@ -182,19 +195,6 @@
             this.label1.Text = "Manage Supplier";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(886, 28);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(59, 49);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // Supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -203,9 +203,11 @@
             this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Supplier";
             this.Text = "Supplier";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Supplier_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

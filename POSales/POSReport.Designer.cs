@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POSReport));
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.picClose = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,17 @@
             this.panel1.Size = new System.Drawing.Size(980, 50);
             this.panel1.TabIndex = 20;
             // 
+            // picClose
+            // 
+            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
+            this.picClose.Location = new System.Drawing.Point(950, 0);
+            this.picClose.Name = "picClose";
+            this.picClose.Size = new System.Drawing.Size(30, 35);
+            this.picClose.TabIndex = 9;
+            this.picClose.TabStop = false;
+            this.picClose.Click += new System.EventHandler(this.picClose_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -69,17 +80,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PRINT PREVIEW FOR POINT OF SALES RECORD";
             // 
-            // picClose
-            // 
-            this.picClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picClose.Image = ((System.Drawing.Image)(resources.GetObject("picClose.Image")));
-            this.picClose.Location = new System.Drawing.Point(950, 0);
-            this.picClose.Name = "picClose";
-            this.picClose.Size = new System.Drawing.Size(30, 35);
-            this.picClose.TabIndex = 9;
-            this.picClose.TabStop = false;
-            this.picClose.Click += new System.EventHandler(this.picClose_Click);
-            // 
             // POSReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -89,10 +89,12 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "POSReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POSReport";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.POSReport_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

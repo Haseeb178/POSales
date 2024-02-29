@@ -303,10 +303,12 @@
             this.Controls.Add(this.txtPcode);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ProductModule";
             this.Text = "ProductModule";
             this.Load += new System.EventHandler(this.ProductModule_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductModule_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();

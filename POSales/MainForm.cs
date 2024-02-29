@@ -75,7 +75,8 @@ namespace POSales
         }
         private void btnDashboard_Click(object sender, EventArgs e)  //Dashboard
         {
-
+            openChildForm(new Dashboard());
+            hideSubmenu();
         }
         private void button1_Click(object sender, EventArgs e)  //Product
         {
@@ -157,6 +158,10 @@ namespace POSales
                 login.ShowDialog();
             }
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            btnDashboard.PerformClick();
+        }
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {
 
@@ -199,5 +204,7 @@ namespace POSales
         {
 
         }
+
+        
     }
 }

@@ -62,5 +62,16 @@ namespace POSales
             cn.Close();
             return password;
         }
+        public double ExtractData(string sql)
+        {
+
+            cn = new SqlConnection();
+            cn.ConnectionString = myConnection();
+            cn.Open();
+            cm = new SqlCommand(sql, cn);
+            double data = double.Parse(cm.ExecuteScalar().ToString());
+            cn.Close();
+            return data;
+        }
     }
 }

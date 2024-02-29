@@ -29,6 +29,7 @@ namespace POSales
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             GetTranNo();
+            lblDate.Text = DateTime.Now.ToShortDateString();
         }
 
         private void picClose_Click(object sender, EventArgs e)
