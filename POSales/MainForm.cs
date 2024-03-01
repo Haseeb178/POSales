@@ -16,6 +16,7 @@ namespace POSales
         SqlConnection cn = new SqlConnection(); 
         SqlCommand cm = new SqlCommand();
         DBConnect dbcon = new DBConnect();
+        SqlDataReader dr;
         public string _pass;
         public MainForm()
         {
@@ -23,7 +24,7 @@ namespace POSales
             customizeDesign();
             cn = new SqlConnection(dbcon.myConnection());
             cn.Open();
-            MessageBox.Show("Database is Connected");
+            //MessageBox.Show("Database is Connected");
         }
         #region panelSlide
         private void customizeDesign()
@@ -161,6 +162,30 @@ namespace POSales
         private void MainForm_Load(object sender, EventArgs e)
         {
             btnDashboard.PerformClick();
+            Noti();
+        }
+        // Noti Alart for critical items
+        public void Noti()
+        {
+            int i = 0;
+            
+            cm = new SqlCommand("SELECT * FROM vwCriticalItems", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i++;
+                Alert alert = new Alert(this);
+                alert.lblPcode.Text = dr["pcode"].ToString();
+                alert.btnReorder.Enabled = true;
+                alert.showAlert(i + ". " + dr["pdesc"].ToString() + " - " + dr["qty"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+        private void btnBarcode_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Barcode());
+            hideSubmenu();
         }
         private void panelMain_Paint(object sender, PaintEventArgs e)
         {

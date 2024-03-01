@@ -81,6 +81,7 @@ namespace POSales
             LoadSold();
         }
 
+
         private void dtTo_ValueChanged(object sender, EventArgs e)
         {
             LoadSold();

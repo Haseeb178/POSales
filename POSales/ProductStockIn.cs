@@ -84,6 +84,27 @@ namespace POSales
                 }
             }
         }
+        public void addStockIn(string pcode)
+        {
+            try
+            {
+                cn.Open();
+                cm = new SqlCommand("INSERT INTO tbStockIn (refno, pcode, sdate, stockinby, supplierid)VALUES (@refno, @pcode, @sdate, @stockinby, @supplierid)", cn);
+                cm.Parameters.AddWithValue("@refno", stockIn.txtRefNo.Text);
+                cm.Parameters.AddWithValue("@pcode", pcode);
+                cm.Parameters.AddWithValue("@sdate", stockIn.dtStockIn.Value);
+                cm.Parameters.AddWithValue("@stockinby", stockIn.txtStockInBy.Text);
+                cm.Parameters.AddWithValue("@supplierid", stockIn.lblId.Text);
+                cm.ExecuteNonQuery();
+                cn.Close();
+                stockIn.LoadStockIn();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, stitle);
+            }
+        }
 
         private void ProductStockIn_KeyDown(object sender, KeyEventArgs e)
         {

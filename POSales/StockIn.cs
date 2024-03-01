@@ -56,6 +56,20 @@ namespace POSales
             cbSupplier.DataSource = dbcon.getTable("SELECT * FROM tbSupplier");
             cbSupplier.DisplayMember = "supplier";
         }
+        public void ProductForSupplier(string pcode)
+        {
+            string supplier = "";
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM vwStockIn WHERE pcode LIKE '" + pcode + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                supplier = dr["supplier"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+            cbSupplier.Text = supplier;
+        }
 
         private void cbSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -181,6 +195,23 @@ namespace POSales
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cbSupplier_TextChanged_1(object sender, EventArgs e)
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tbSupplier WHERE supplier LIKE '" + cbSupplier.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                lblId.Text = dr["id"].ToString();
+                txtConPerson.Text = dr["contactperson"].ToString();
+                txtAddress.Text = dr["address"].ToString();
+
+            }
+            dr.Close();
+            cn.Close();
         }
     }
 }

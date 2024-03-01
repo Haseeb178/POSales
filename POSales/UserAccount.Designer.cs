@@ -29,11 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccount));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnAccSave = new System.Windows.Forms.Button();
+            this.btnAccCancel = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
+            this.txtRePass = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -58,18 +70,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblAccNote = new System.Windows.Forms.Label();
             this.btnResetPass = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtRePass = new System.Windows.Forms.TextBox();
-            this.cbRole = new System.Windows.Forms.ComboBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.btnAccCancel = new System.Windows.Forms.Button();
-            this.btnAccSave = new System.Windows.Forms.Button();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -89,7 +89,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(7, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 43);
+            this.label1.Size = new System.Drawing.Size(150, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Setting";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -136,6 +136,122 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Create Account";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnAccSave
+            // 
+            this.btnAccSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
+            this.btnAccSave.FlatAppearance.BorderSize = 0;
+            this.btnAccSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccSave.ForeColor = System.Drawing.Color.White;
+            this.btnAccSave.Location = new System.Drawing.Point(581, 301);
+            this.btnAccSave.Name = "btnAccSave";
+            this.btnAccSave.Size = new System.Drawing.Size(94, 35);
+            this.btnAccSave.TabIndex = 43;
+            this.btnAccSave.Text = "Save";
+            this.btnAccSave.UseVisualStyleBackColor = false;
+            this.btnAccSave.Click += new System.EventHandler(this.btnAccSave_Click);
+            // 
+            // btnAccCancel
+            // 
+            this.btnAccCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAccCancel.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnAccCancel.FlatAppearance.BorderSize = 0;
+            this.btnAccCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnAccCancel.Location = new System.Drawing.Point(695, 301);
+            this.btnAccCancel.Name = "btnAccCancel";
+            this.btnAccCancel.Size = new System.Drawing.Size(94, 35);
+            this.btnAccCancel.TabIndex = 44;
+            this.btnAccCancel.Text = "Cancel";
+            this.btnAccCancel.UseVisualStyleBackColor = false;
+            this.btnAccCancel.Click += new System.EventHandler(this.btnAccCancel_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(262, 243);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(527, 26);
+            this.txtName.TabIndex = 42;
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "Administrator",
+            "Cashier"});
+            this.cbRole.Location = new System.Drawing.Point(262, 190);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(527, 28);
+            this.cbRole.TabIndex = 41;
+            // 
+            // txtRePass
+            // 
+            this.txtRePass.Location = new System.Drawing.Point(262, 139);
+            this.txtRePass.Name = "txtRePass";
+            this.txtRePass.Size = new System.Drawing.Size(527, 26);
+            this.txtRePass.TabIndex = 38;
+            this.txtRePass.UseSystemPasswordChar = true;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(262, 88);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(527, 26);
+            this.txtPass.TabIndex = 39;
+            this.txtPass.UseSystemPasswordChar = true;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(262, 37);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(527, 26);
+            this.txtUsername.TabIndex = 40;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(92, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 20);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Full Name :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(92, 193);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Role :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(92, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 20);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Re-type Password :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(92, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Password :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(92, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Username :";
             // 
             // tabPage2
             // 
@@ -307,14 +423,14 @@
             this.dgvUser.AllowUserToAddRows = false;
             this.dgvUser.BackgroundColor = System.Drawing.Color.White;
             this.dgvUser.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUser.ColumnHeadersHeight = 30;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -409,122 +525,6 @@
             this.btnResetPass.Text = "Reset Password...";
             this.btnResetPass.UseVisualStyleBackColor = false;
             this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(92, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Password :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(92, 142);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 20);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Re-type Password :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(92, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Role :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(92, 244);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Full Name :";
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(262, 88);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(527, 26);
-            this.txtPass.TabIndex = 39;
-            this.txtPass.UseSystemPasswordChar = true;
-            // 
-            // txtRePass
-            // 
-            this.txtRePass.Location = new System.Drawing.Point(262, 139);
-            this.txtRePass.Name = "txtRePass";
-            this.txtRePass.Size = new System.Drawing.Size(527, 26);
-            this.txtRePass.TabIndex = 38;
-            this.txtRePass.UseSystemPasswordChar = true;
-            // 
-            // cbRole
-            // 
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Items.AddRange(new object[] {
-            "Administrator",
-            "Cashier"});
-            this.cbRole.Location = new System.Drawing.Point(262, 190);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(527, 28);
-            this.cbRole.TabIndex = 41;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(262, 243);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(527, 26);
-            this.txtName.TabIndex = 42;
-            // 
-            // btnAccCancel
-            // 
-            this.btnAccCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAccCancel.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnAccCancel.FlatAppearance.BorderSize = 0;
-            this.btnAccCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnAccCancel.Location = new System.Drawing.Point(695, 301);
-            this.btnAccCancel.Name = "btnAccCancel";
-            this.btnAccCancel.Size = new System.Drawing.Size(94, 35);
-            this.btnAccCancel.TabIndex = 44;
-            this.btnAccCancel.Text = "Cancel";
-            this.btnAccCancel.UseVisualStyleBackColor = false;
-            this.btnAccCancel.Click += new System.EventHandler(this.btnAccCancel_Click);
-            // 
-            // btnAccSave
-            // 
-            this.btnAccSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAccSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(160)))));
-            this.btnAccSave.FlatAppearance.BorderSize = 0;
-            this.btnAccSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccSave.ForeColor = System.Drawing.Color.White;
-            this.btnAccSave.Location = new System.Drawing.Point(581, 301);
-            this.btnAccSave.Name = "btnAccSave";
-            this.btnAccSave.Size = new System.Drawing.Size(94, 35);
-            this.btnAccSave.TabIndex = 43;
-            this.btnAccSave.Text = "Save";
-            this.btnAccSave.UseVisualStyleBackColor = false;
-            this.btnAccSave.Click += new System.EventHandler(this.btnAccSave_Click);
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(262, 37);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(527, 26);
-            this.txtUsername.TabIndex = 40;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(92, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "Username :";
             // 
             // UserAccount
             // 

@@ -187,10 +187,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(10, 28);
+            this.label1.Location = new System.Drawing.Point(10, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 66);
+            this.label1.Size = new System.Drawing.Size(191, 66);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Supplier";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

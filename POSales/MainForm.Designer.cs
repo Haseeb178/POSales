@@ -58,6 +58,7 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnBarcode = new System.Windows.Forms.Button();
             this.panelSlide.SuspendLayout();
             this.panelSubSetting.SuspendLayout();
             this.panelSubRecord.SuspendLayout();
@@ -96,7 +97,7 @@
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(0, 845);
+            this.btnLogout.Location = new System.Drawing.Point(0, 890);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnLogout.Size = new System.Drawing.Size(183, 45);
@@ -109,12 +110,13 @@
             // panelSubSetting
             // 
             this.panelSubSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(200)))));
+            this.panelSubSetting.Controls.Add(this.btnBarcode);
             this.panelSubSetting.Controls.Add(this.btnStore);
             this.panelSubSetting.Controls.Add(this.btnUser);
             this.panelSubSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubSetting.Location = new System.Drawing.Point(0, 755);
             this.panelSubSetting.Name = "panelSubSetting";
-            this.panelSubSetting.Size = new System.Drawing.Size(183, 90);
+            this.panelSubSetting.Size = new System.Drawing.Size(183, 135);
             this.panelSubSetting.TabIndex = 7;
             // 
             // btnStore
@@ -480,6 +482,22 @@
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
+            // btnBarcode
+            // 
+            this.btnBarcode.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBarcode.FlatAppearance.BorderSize = 0;
+            this.btnBarcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBarcode.ForeColor = System.Drawing.Color.White;
+            this.btnBarcode.Location = new System.Drawing.Point(0, 90);
+            this.btnBarcode.Name = "btnBarcode";
+            this.btnBarcode.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnBarcode.Size = new System.Drawing.Size(183, 45);
+            this.btnBarcode.TabIndex = 5;
+            this.btnBarcode.Text = "Barcode";
+            this.btnBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBarcode.UseVisualStyleBackColor = true;
+            this.btnBarcode.Click += new System.EventHandler(this.btnBarcode_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -541,6 +559,7 @@
         public System.Windows.Forms.Label lblUsername;
         public System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnBarcode;
     }
 }
 
