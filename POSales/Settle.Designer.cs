@@ -138,7 +138,7 @@
             this.btnEnter.Name = "btnEnter";
             this.btnEnter.Size = new System.Drawing.Size(218, 50);
             this.btnEnter.TabIndex = 17;
-            this.btnEnter.Text = "Enter";
+            this.btnEnter.Text = "Save And Print";
             this.btnEnter.UseVisualStyleBackColor = false;
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
