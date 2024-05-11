@@ -28,7 +28,7 @@ namespace POSales
         {
             int i = 0;
             dgvProduct.Rows.Clear();
-            cm = new SqlCommand("SELECT p.pcode, p.barcode, p.pdesc, b.brand, c.category, p.price, p.reorder FROM tbProduct AS p INNER JOIN tbBrand AS b ON b.id = p.bid INNER JOIN tbCategory AS c on c.id = p.cid", cn);
+            cm = new SqlCommand("SELECT p.pcode, p.barcode, p.pdesc, b.brand, COALESCE(c.category, 'N/A'), p.price, p.reorder FROM tbProduct AS p INNER JOIN tbBrand AS b ON b.id = p.bid LEFT JOIN tbCategory AS c on c.id = p.cid", cn);
             cn.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -51,8 +51,7 @@ namespace POSales
             string colName = dgvProduct.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {
-                ProductModule product = new ProductModule(this);
-                product.txtPcode.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+                ProductModule product = new ProductModule(this, dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString());
                 product.txtBarcode.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
                 product.txtPdesc.Text = dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
                 product.cboBrand.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -60,7 +59,6 @@ namespace POSales
                 product.txtPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
                 product.UDReOrder.Value = int.Parse(dgvProduct.Rows[e.RowIndex].Cells[7].Value.ToString());
 
-                product.txtPcode.Enabled = false;
                 product.btnSave.Enabled = false;
                 product.btnUpdate.Enabled = true;
                 product.ShowDialog();
@@ -77,6 +75,16 @@ namespace POSales
                 }
             }
             LoadProduct();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

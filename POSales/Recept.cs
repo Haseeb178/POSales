@@ -53,7 +53,7 @@ namespace POSales
             ReportDataSource rptDataSourece;
             try
             {
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptRecept.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptRecept.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
@@ -64,8 +64,6 @@ namespace POSales
                 da.Fill(ds.Tables["dtRecept"]);
                 cn.Close();
 
-                ReportParameter pVatable = new ReportParameter("pVatable", cashier.lblVatable.Text);
-                ReportParameter pVat = new ReportParameter("pVat", cashier.lblVat.Text);
                 ReportParameter pDiscount = new ReportParameter("pDiscount", cashier.lblDiscount.Text);
                 ReportParameter pTotal = new ReportParameter("pTotal", cashier.lblDisplayTotal.Text);
                 ReportParameter pCash = new ReportParameter("pCash", pcash);
@@ -75,8 +73,6 @@ namespace POSales
                 ReportParameter pTransaction = new ReportParameter("pTransaction", "Invoice #: " + cashier.lblTranNo.Text);
                 ReportParameter pCashier = new ReportParameter("pCashier", cashier.lblUsername.Text);
 
-                reportViewer1.LocalReport.SetParameters(pVatable);
-                reportViewer1.LocalReport.SetParameters(pVat);
                 reportViewer1.LocalReport.SetParameters(pDiscount);
                 reportViewer1.LocalReport.SetParameters(pTotal);
                 reportViewer1.LocalReport.SetParameters(pCash);
@@ -90,13 +86,14 @@ namespace POSales
                 reportViewer1.LocalReport.DataSources.Add(rptDataSourece);
                 reportViewer1.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
                 reportViewer1.ZoomMode = ZoomMode.Percent;
-                reportViewer1.ZoomPercent = 30;
+                reportViewer1.ZoomPercent = 50;
 
 
             }
             catch (Exception ex)
             {
                 cn.Close();
+                Console.WriteLine("Error : " + ex);
                 MessageBox.Show(ex.Message);
             }
         }

@@ -79,7 +79,8 @@
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.RowHeadersVisible = false;
-            this.dgvProduct.Size = new System.Drawing.Size(973, 402);
+            this.dgvProduct.RowHeadersWidth = 102;
+            this.dgvProduct.Size = new System.Drawing.Size(1388, 629);
             this.dgvProduct.TabIndex = 3;
             this.dgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellContentClick);
             // 
@@ -87,6 +88,7 @@
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.HeaderText = "No";
+            this.Column1.MinimumWidth = 12;
             this.Column1.Name = "Column1";
             this.Column1.Width = 53;
             // 
@@ -94,6 +96,7 @@
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column2.HeaderText = "Pcode";
+            this.Column2.MinimumWidth = 12;
             this.Column2.Name = "Column2";
             this.Column2.Width = 81;
             // 
@@ -101,6 +104,7 @@
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column3.HeaderText = "Barcode";
+            this.Column3.MinimumWidth = 12;
             this.Column3.Name = "Column3";
             this.Column3.Width = 96;
             // 
@@ -108,12 +112,14 @@
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.HeaderText = "Description";
+            this.Column4.MinimumWidth = 12;
             this.Column4.Name = "Column4";
             // 
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column5.HeaderText = "Brand";
+            this.Column5.MinimumWidth = 12;
             this.Column5.Name = "Column5";
             this.Column5.Width = 75;
             // 
@@ -121,6 +127,7 @@
             // 
             this.Category.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Category.HeaderText = "Category";
+            this.Category.MinimumWidth = 12;
             this.Category.Name = "Category";
             this.Category.Width = 102;
             // 
@@ -128,6 +135,7 @@
             // 
             this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 12;
             this.Price.Name = "Price";
             this.Price.Width = 69;
             // 
@@ -135,6 +143,7 @@
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column6.HeaderText = "Re-Order";
+            this.Column6.MinimumWidth = 12;
             this.Column6.Name = "Column6";
             this.Column6.Width = 99;
             // 
@@ -143,16 +152,18 @@
             this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Edit.HeaderText = "";
             this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.MinimumWidth = 12;
             this.Edit.Name = "Edit";
-            this.Edit.Width = 5;
+            this.Edit.Width = 12;
             // 
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Delete.HeaderText = "";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.MinimumWidth = 12;
             this.Delete.Name = "Delete";
-            this.Delete.Width = 5;
+            this.Delete.Width = 12;
             // 
             // panel1
             // 
@@ -160,10 +171,11 @@
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 402);
+            this.panel1.Location = new System.Drawing.Point(0, 629);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 100);
+            this.panel1.Size = new System.Drawing.Size(1388, 100);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnAdd
             // 
@@ -189,6 +201,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Manage Product";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Product
             // 
@@ -196,7 +209,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(973, 502);
+            this.ClientSize = new System.Drawing.Size(1388, 729);
             this.ControlBox = false;
             this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.panel1);

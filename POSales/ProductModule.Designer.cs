@@ -35,9 +35,7 @@
             this.lblId = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtPcode = new System.Windows.Forms.TextBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPdesc = new System.Windows.Forms.TextBox();
@@ -130,15 +128,6 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Product Code:";
-            // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -154,24 +143,17 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtPcode
-            // 
-            this.txtPcode.Location = new System.Drawing.Point(134, 68);
-            this.txtPcode.Name = "txtPcode";
-            this.txtPcode.Size = new System.Drawing.Size(179, 26);
-            this.txtPcode.TabIndex = 8;
-            // 
             // txtBarcode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(427, 68);
+            this.txtBarcode.Location = new System.Drawing.Point(134, 74);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(199, 26);
+            this.txtBarcode.Size = new System.Drawing.Size(492, 26);
             this.txtBarcode.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(341, 71);
+            this.label3.Location = new System.Drawing.Point(12, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 10;
@@ -297,10 +279,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPdesc);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtPcode);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
@@ -326,9 +306,7 @@
         public System.Windows.Forms.Label lblId;
         public System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btnSave;
-        public System.Windows.Forms.TextBox txtPcode;
         public System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtPdesc;

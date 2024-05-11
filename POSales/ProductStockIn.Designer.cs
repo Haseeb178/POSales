@@ -175,6 +175,7 @@
             this.Name = "ProductStockIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductStockIn";
+            this.Load += new System.EventHandler(this.ProductStockIn_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProductStockIn_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.panel1.ResumeLayout(false);

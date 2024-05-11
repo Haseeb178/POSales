@@ -70,6 +70,10 @@ namespace POSales
                         MessageBox.Show("Account is deactivate. Unable to login", "Unable to Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
+                    UserSession.Username = _username;
+                    UserSession.Name = _name;
+                    UserSession.Role = _role;
+                    UserSession.IsActivated = _isactivate;
                     if (_role == "Cashier")
                     {
                         MessageBox.Show("Welcome " + _name + " |", "ACCESS GRANTED", MessageBoxButtons.OK, MessageBoxIcon.Information);

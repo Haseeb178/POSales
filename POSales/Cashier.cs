@@ -179,12 +179,7 @@ namespace POSales
         public void GetCartTotal()
         {
             double discount = double.Parse(lblDiscount.Text);
-            double sales = double.Parse(lblSaleTotal.Text) - discount;
-            double vat = sales * 0.12;//VAT: 12% of VAT Payable (Output Tax less Input Tax)
-            double vatable = sales - vat;
-
-            lblVat.Text = vat.ToString("#,##0.00");
-            lblVatable.Text = vatable.ToString("#,##0.00");
+            double sales = double.Parse(lblSaleTotal.Text);           
             lblDisplayTotal.Text = sales.ToString("#,##0.00");
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -430,6 +425,11 @@ namespace POSales
         private void Cashier_FormClosing(object sender, FormClosingEventArgs e)
         {
             captureDevice.Stop();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

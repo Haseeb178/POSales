@@ -58,10 +58,8 @@
             this.LinProduct = new System.Windows.Forms.LinkLabel();
             this.LinGenerate = new System.Windows.Forms.LinkLabel();
             this.dtStockIn = new System.Windows.Forms.DateTimePicker();
-            this.txtStockInBy = new System.Windows.Forms.TextBox();
             this.txtRefNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvInStockHistory = new System.Windows.Forms.DataGridView();
@@ -268,10 +266,8 @@
             this.panel2.Controls.Add(this.LinProduct);
             this.panel2.Controls.Add(this.LinGenerate);
             this.panel2.Controls.Add(this.dtStockIn);
-            this.panel2.Controls.Add(this.txtStockInBy);
             this.panel2.Controls.Add(this.txtRefNo);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -344,7 +340,7 @@
             // 
             this.LinProduct.AutoSize = true;
             this.LinProduct.LinkColor = System.Drawing.Color.DimGray;
-            this.LinProduct.Location = new System.Drawing.Point(139, 133);
+            this.LinProduct.Location = new System.Drawing.Point(139, 99);
             this.LinProduct.Name = "LinProduct";
             this.LinProduct.Size = new System.Drawing.Size(234, 20);
             this.LinProduct.TabIndex = 4;
@@ -366,17 +362,10 @@
             // 
             // dtStockIn
             // 
-            this.dtStockIn.Location = new System.Drawing.Point(143, 93);
+            this.dtStockIn.Location = new System.Drawing.Point(143, 59);
             this.dtStockIn.Name = "dtStockIn";
             this.dtStockIn.Size = new System.Drawing.Size(280, 26);
             this.dtStockIn.TabIndex = 2;
-            // 
-            // txtStockInBy
-            // 
-            this.txtStockInBy.Location = new System.Drawing.Point(143, 53);
-            this.txtStockInBy.Name = "txtStockInBy";
-            this.txtStockInBy.Size = new System.Drawing.Size(280, 26);
-            this.txtStockInBy.TabIndex = 1;
             // 
             // txtRefNo
             // 
@@ -388,20 +377,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 96);
+            this.label4.Location = new System.Drawing.Point(21, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Stock In Date";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Stock In By";
             // 
             // label2
             // 
@@ -629,7 +609,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel LinGenerate;
         private System.Windows.Forms.LinkLabel LinProduct;
         public System.Windows.Forms.Label lblId;
@@ -641,7 +620,6 @@
         public System.Windows.Forms.ComboBox cbSupplier;
         public System.Windows.Forms.Button btnEntry;
         public System.Windows.Forms.DateTimePicker dtStockIn;
-        public System.Windows.Forms.TextBox txtStockInBy;
         public System.Windows.Forms.TextBox txtRefNo;
         private System.Windows.Forms.DataGridView dgvInStockHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;

@@ -51,7 +51,7 @@ namespace POSales
             try
             {
                 ReportDataSource rptDS;
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptSoldReposrt.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptSoldReposrt.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
@@ -93,7 +93,7 @@ namespace POSales
             try
             {
                 ReportDataSource rptDS;
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptTopSell.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptTopSell.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
@@ -126,7 +126,7 @@ namespace POSales
             try
             {
                 ReportDataSource rptDS;
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptSoldItems.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptSoldItems.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
@@ -157,7 +157,7 @@ namespace POSales
             try
             {
                 ReportDataSource rptDS;
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptInventory.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptInventory.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
@@ -186,7 +186,7 @@ namespace POSales
             try
             {
                 ReportDataSource rptDS;
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptCancelled.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptCancelled.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();
@@ -216,7 +216,7 @@ namespace POSales
             try
             {
                 ReportDataSource rptDS;
-                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\Reports\rptStockInHist.rdlc";
+                this.reportViewer1.LocalReport.ReportPath = Application.StartupPath + @"\..\..\rptStockInHist.rdlc";
                 this.reportViewer1.LocalReport.DataSources.Clear();
 
                 DataSet1 ds = new DataSet1();

@@ -100,8 +100,18 @@ namespace POSales
 
         private void LinProduct_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ProductStockIn productStock = new ProductStockIn(this);
-            productStock.ShowDialog();
+            Boolean supplierSelected = true;
+
+            if (string.IsNullOrEmpty(txtConPerson.Text) && string.IsNullOrEmpty(txtAddress.Text))
+            {
+                supplierSelected = false;
+                MessageBox.Show("Please select the supplier.", stitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (supplierSelected)
+            {
+                ProductStockIn productStock = new ProductStockIn(this);
+                productStock.ShowDialog();
+            }
         }
 
         private void btnEntry_Click(object sender, EventArgs e)
@@ -141,7 +151,6 @@ namespace POSales
         public void Clear()
         {
             txtRefNo.Clear();
-            txtStockInBy.Clear();
             dtStockIn.Value = DateTime.Now;
         }
 

@@ -17,7 +17,7 @@ namespace POSales
         private string con;
         public string myConnection()
         {
-            con = @"Data Source=DESKTOP-KUTTNU9;Initial Catalog=DBPOSale;Integrated Security=True";
+            con = @"Server=tcp:scancart.database.windows.net,1433;Initial Catalog=ScanCart;Persist Security Info=False;User ID=CloudSA9709ccde;Password=Srwatson33;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             return con;
         }
 

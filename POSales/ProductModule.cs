@@ -18,11 +18,13 @@ namespace POSales
         DBConnect dbcon = new DBConnect();
         string stitle = "Point Of Sales";
         Product product;
-        public ProductModule(Product pd)
+        String pcode;
+        public ProductModule(Product pd, String productCode="")
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.myConnection());
             product = pd;
+            pcode = productCode;
             LoadCategory();
             LoadBrand();
         }
@@ -49,7 +51,6 @@ namespace POSales
         }
         public void Clear()
         {
-            txtPcode.Clear();
             txtBarcode.Clear();
             txtPdesc.Clear();
             txtPrice.Clear();
@@ -57,8 +58,6 @@ namespace POSales
             cboCategory.SelectedIndex = 0;
             UDReOrder.Value = 1;
 
-            txtPcode.Enabled = true;
-            txtPcode.Focus();
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
         }
@@ -69,8 +68,7 @@ namespace POSales
             {
                 if (MessageBox.Show("Are you sure want to save this product?", "Save Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    cm = new SqlCommand("INSERT INTO tbProduct(pcode, barcode, pdesc, bid, cid, price, reorder)VALUES (@pcode,@barcode,@pdesc,@bid,@cid,@price, @reorder)", cn);
-                    cm.Parameters.AddWithValue("@pcode", txtPcode.Text);
+                    cm = new SqlCommand("INSERT INTO tbProduct(barcode, pdesc, bid, cid, price, reorder)VALUES (@barcode,@pdesc,@bid,@cid,@price, @reorder)", cn);
                     cm.Parameters.AddWithValue("@barcode", txtBarcode.Text);
                     cm.Parameters.AddWithValue("@pdesc", txtPdesc.Text);
                     cm.Parameters.AddWithValue("@bid", cboBrand.SelectedValue);
@@ -105,13 +103,13 @@ namespace POSales
                 if (MessageBox.Show("Are you sure want to update this product?", "Update Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cm = new SqlCommand("UPDATE tbProduct SET barcode=@barcode,pdesc=@pdesc,bid=@bid,cid=@cid,price=@price, reorder=@reorder WHERE pcode LIKE @pcode", cn);
-                    cm.Parameters.AddWithValue("@pcode", txtPcode.Text);
                     cm.Parameters.AddWithValue("@barcode", txtBarcode.Text);
                     cm.Parameters.AddWithValue("@pdesc", txtPdesc.Text);
                     cm.Parameters.AddWithValue("@bid", cboBrand.SelectedValue);
                     cm.Parameters.AddWithValue("@cid", cboCategory.SelectedValue);
                     cm.Parameters.AddWithValue("@price", double.Parse(txtPrice.Text));
                     cm.Parameters.AddWithValue("@reorder", UDReOrder.Value);
+                    cm.Parameters.AddWithValue("@pcode", pcode);
                     cn.Open();
                     cm.ExecuteNonQuery();
                     cn.Close();
